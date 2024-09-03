@@ -1,0 +1,43 @@
+/* Contacto.module.css */
+
+.contactContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contactTitle {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .contactText {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contactDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  
+  .contactDetails p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .contactDetails strong {
+    font-weight: 600;
+  }
+  

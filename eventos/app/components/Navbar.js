@@ -1,34 +1,33 @@
-
 "use client"; // Esto convierte el componente en un Client Component
 
 import Link from 'next/link';
+import styles from './Navbar.module.css'; // Importar como módulo
 
 const Navbar = ({ children }) => {
   return (
-    <div >
-      <header>
-        <div >
-          <h1>Eventos</h1>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <div className={styles.logoContainer}>
+          {/* Asegúrate de que la ruta al logo sea correcta */}
+          <img src="/app/assets/logo.png" alt="Logo" className={styles.logo} />
+          <h1 className={styles.title}>Eventos</h1>
         </div>
-        <nav>
-          <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/contacto">Contacto</Link></li>
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+             <li className={styles.navItem}><Link href="/">Home</Link></li>
+            <li className={styles.navItem}><Link href="/contacto">Contacto</Link></li>
+
           </ul>
         </nav>
-        <div >
+        <div className={styles.userInfo}>
           <span>Usuario</span> {/* Solo visible si el usuario está logueado */}
-          <button>Cerrar Sesión</button>
+          <button className={styles.logoutButton}>Cerrar Sesión</button>
         </div>
       </header>
       
-      <main>
+      <main className={styles.mainContent}>
         {children}
       </main>
-      
-      <footer>
-        <p>&copy; 2024 Eventos. Todos los derechos reservados.</p>
-      </footer>
     </div>
   );
 };

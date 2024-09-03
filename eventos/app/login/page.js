@@ -1,23 +1,31 @@
-// pages/login.js
-"use client"; // Esto indica que este componente es un Client Component
-import Navbar from "../components/navbar";
 
+"use client"; 
+
+import { useRouter } from 'next/navigation'; 
 
 export default function Login() {
+  const router = useRouter();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    router.push('/events');
+  };
+
   return (
-      <div >
-        <h2>Login</h2>
-        <form >
-          <div>
-            <label>Email</label>
-            <input type="email" placeholder="Email" />
-          </div>
-          <div>
-            <label>Password</label>
-            <input type="password" placeholder="Password" />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-      </div>
+    <div >
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Email</label>
+          <input type="email" placeholder="Email" />
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="password" placeholder="Password" />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 }
