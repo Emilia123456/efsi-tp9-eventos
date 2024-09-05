@@ -1,0 +1,26 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.eventTitle {
+  font-size: 3rem;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.eventDate,
+.eventLocation,
+.eventDescription {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
+}

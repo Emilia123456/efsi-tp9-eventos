@@ -1,28 +1,37 @@
-// pages/signup.js
-"use client"; // Esto indica que este componente es un Client Component
-
-import Navbar from "../components/navbar";
-
+"use client"; 
+import styles from './Signup.module.css';
+import { useRouter } from 'next/navigation'; 
+import Navbar from '../components/navbar';
 
 export default function Signup() {
+  const router = useRouter();
+
+  const handlesignup = (e) => {
+    e.preventDefault();
+    router.push('/events');
+  };
+
   return (
-      <div >
-        <h2>Registro</h2>
-        <form >
-          <div>
-            <label>Nombre</label>
-            <input type="text" placeholder="Nombre" />
-          </div>
-          <div>
+    <Navbar>
+      <div className={styles.signupContainer}>
+        
+        <form className={styles.formContent} onSubmit={handlesignup}>
+          <h2 className={styles.signupTitle}>Registrate!</h2>
+          <div className={styles.formGroup}>
             <label>Email</label>
             <input type="email" placeholder="Email" />
           </div>
-          <div>
-            <label>Password</label>
+          <div className={styles.formGroup}>
+            <label>Contraseña</label>
             <input type="password" placeholder="Password" />
           </div>
-          <button type="submit">Registrarse</button>
+          <div className={styles.formGroup}>
+            <label>Repetí la contraseña</label>
+            <input type="password" placeholder="Password" />
+          </div>
+          <button className={styles.signupButton} type="submit">Registrarse</button>
         </form>
       </div>
+    </Navbar>
   );
 }

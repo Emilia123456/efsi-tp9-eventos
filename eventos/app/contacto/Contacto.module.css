@@ -1,43 +1,35 @@
-/* Contacto.module.css */
 
 .contactContainer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contactTitle {
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .contactText {
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .contactDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 20px;
-  }
-  
-  .contactDetails p {
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .contactDetails strong {
-    font-weight: 600;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; 
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.contactDetails {
+  background-color: #ffffff;
+  padding: 80px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 10px auto;
+}
+
+.contactTitle {
+  font-size: 3rem;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contactText {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  text-align: center;
+}

@@ -1,9 +1,9 @@
-// app/page.js
+
 "use client";
 import Link from 'next/link';
 import styles from './Home.module.css';
 import Navbar from './components/navbar';
-// Importamos los estilos específicos para este componente
+
 
 export default function Home() {
   return (
@@ -17,10 +17,10 @@ export default function Home() {
         </p>
         <div className={styles.buttonGroup}>
           <Link href="/login">
-            <button className={styles.button}>Login</button>
+            <button className={styles.button}>Iniciar sesión</button>
           </Link>
           <Link href="/signup">
-            <button className={styles.button}>Sign Up</button>
+            <button className={styles.button}>Registrarse</button>
           </Link>
         </div>
       </div>

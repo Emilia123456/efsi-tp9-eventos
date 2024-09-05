@@ -1,15 +1,15 @@
-/* Estilo del contenedor */
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: #f8f8f8;
   padding: 20px;
+
 }
 
-/* Estilo del contenido principal */
 .content {
   text-align: left;
   background-color: #ffffff;
@@ -20,7 +20,7 @@
   margin: 20px auto;
 }
 
-/* Títulos */
+
 .mainTitle {
   font-size: 3rem;
   color: #000;
@@ -43,7 +43,7 @@
   line-height: 1.6;
 }
 
-/* Estilo de botones */
+
 .buttonGroup {
   display: flex;
   justify-content: flex-start;
