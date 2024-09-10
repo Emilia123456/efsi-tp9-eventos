@@ -19,7 +19,8 @@ export default function Events() {
   }, []);
 
   const handleEventClick = (id) => {
-    router.push(`/detail/page?id=${id}`);
+    console.log("llega aca", id)
+    router.push(`/detail/${id}`);
   };
 
   return (

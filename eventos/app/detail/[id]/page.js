@@ -2,12 +2,13 @@
 
 import { useRouter } from 'next/router'; 
 import { useState, useEffect } from 'react';
-import styles from './Details.module.css';
+import styles from '../Details.module.css';
+import Navbar from '@/app/components/navbar';
 
-export default function EventDetails() {
-  const router = useRouter();
-  const { id } = router.query; 
-  const [event, setEvent] = useState(null);
+export default function EventDetails({ params }) {  
+  const { id } = params;   
+  const [event, setEvent] = useState(null);  
+
 
   useEffect(() => {
     const eventsData = [
@@ -23,11 +24,13 @@ export default function EventDetails() {
   if (!event) return <p>Cargando evento...</p>;
 
   return (
+    <Navbar>
     <main className={styles.detailsContainer}>
       <h1 className={styles.eventTitle}>{event.title}</h1>
       <p className={styles.eventDate}><strong>Fecha:</strong> {event.date}</p>
       <p className={styles.eventLocation}><strong>Ubicación:</strong> {event.location}</p>
       <p className={styles.eventDescription}>{event.description}</p>
     </main>
+    </Navbar>
   );
 }

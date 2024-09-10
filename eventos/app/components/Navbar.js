@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Navbar.module.css'; 
 
 const Navbar = ({ children }) => {
@@ -8,7 +9,7 @@ const Navbar = ({ children }) => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-          <img src="eventos/app/assets/logo.png" alt="Logo" className={styles.logo} /> {/* NO SE VE EL LOGO */}
+        <img src="/assets/logo.png" alt="Logo2" className={styles.logo} />  {/* NO SE VE EL LOGO */}
           <h1 className={styles.title}>Eventos</h1>
         </div>
         <nav className={styles.nav}>
