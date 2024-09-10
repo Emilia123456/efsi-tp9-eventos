@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'; 
 import styles from './Events.module.css';
-import Navbar from '../components/navbar';
+import EventList from '../components/EventList/EventList';
+import Navbar from '../components/Navbar/Navbar';
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -27,15 +28,8 @@ export default function Events() {
     <Navbar>
     <main className={styles.eventsContainer}>
       <h1 className={styles.eventsTitle}>Eventos</h1>
-      <ul className={styles.eventsList}>
-        {events.map(event => (
-          <li key={event.id} className={styles.eventItem} onClick={() => handleEventClick(event.id)}>
-            <h3 className={styles.eventTitle}>{event.title}</h3>
-            <p className={styles.eventDate}>Fecha: {event.date}</p>
-            <p className={styles.eventLocation}>Ubicación: {event.location}</p>
-          </li>
-        ))}
-      </ul>
+      <EventList events={events} onEventClick={handleEventClick} />
+
     </main>
     </Navbar>
   );

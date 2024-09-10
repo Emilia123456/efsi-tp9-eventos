@@ -1,6 +1,5 @@
 // app/layout.js
 import "./globals.css";
-import Navbar from "./components/navbar";
 
 export const metadata = {
   title: "Eventos",

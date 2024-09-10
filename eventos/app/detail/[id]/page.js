@@ -3,7 +3,7 @@
 import { useRouter } from 'next/router'; 
 import { useState, useEffect } from 'react';
 import styles from '../Details.module.css';
-import Navbar from '@/app/components/navbar';
+import Navbar from '@/app/components/Navbar/Navbar';
 
 export default function EventDetails({ params }) {  
   const { id } = params;   

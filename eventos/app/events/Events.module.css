@@ -17,32 +17,3 @@
     text-align: center;
   }
   
- 
-  .eventsList {
-    list-style-type: none;
-    padding: 0;
-    max-width: 800px;
-    width: 100%;
-  }
-  
-  .eventItem {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .eventTitle {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .eventDate,
-  .eventLocation {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 5px;
-  }
-  

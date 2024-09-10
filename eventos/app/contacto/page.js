@@ -1,5 +1,5 @@
 "use client"; 
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar/Navbar';
 import styles from './Contacto.module.css';
 
 export default function Contacto() {
