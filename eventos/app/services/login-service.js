@@ -1,30 +1,26 @@
 import axios from 'axios';
 
 const userApi = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: 'http://localhost:3001/api/user',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-export const login = async (email, password) => {
-  try {
-    const response = await userApi.post('/user/login', {
-      email: email,
-      password: password, 
-    });
-
-    console.log('LLEGO ACA');
-    console.log(email, password);
-    console.log(response.data);
-
-    return response.data;  
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    console.error(error);
-    throw error; 
-  }
-};
+export default async function login(email, password) {
+    try {
+      const response = await userApi.post('/login', {
+        username: email,
+        password: password, 
+      });
+  
+      return response.data;  
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      throw error; 
+    }
+  };
+  
 /* 
 
 export const register = async (email, nombre, apellido, direccion, password, genero, foto, fecha) => {
