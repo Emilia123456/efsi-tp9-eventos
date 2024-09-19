@@ -7,12 +7,15 @@ const userApi = axios.create({
   },
 });
 
-export default async function signup (email, password) {
+export default async function signup (nombre, apellido, email, password) {
     try {
-      const response = await userApi.post('/signup', {
+      const response = await userApi.post('/register', {
+        first_name: nombre,
+        last_name: apellido,
         username: email,
         password: password, 
       });
+      
   
       return response.data;  
     } catch (error) {
@@ -21,4 +24,4 @@ export default async function signup (email, password) {
     }
   };
   
-
+  

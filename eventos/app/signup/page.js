@@ -5,38 +5,58 @@ import styles from './Signup.module.css';
 import Navbar from '../components/Navbar/Navbar';
 import signup from '../services/signup-service';
 import Form from '../components/Form/Form';
-import signup from '../services/signup-service';
 
 const Signup = () => {
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [secondPassword, setSecondPassword] = useState('');
   const [error, setError] = useState(null);
   const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const result = await signup(email, password);
-      if (result.success) {
-        const token = result.token;
-        localStorage.setItem('token', token);
-        router.push('/events');
-      } else {
-        setError("Usuario o contraseña incorrecta, vuelve a ingresar los datos.");
+    if (password==secondPassword){
+      try {
+        const result = await signup(nombre, apellido, email, password);
+        if (result>0) {
+          const token = result.token;
+          localStorage.setItem('token', token);
+          router.push('/events');
+        } else {
+          setError("Usuario o contraseña incorrecta, vuelve a ingresar los datos.");
+        }
+      } catch (error) {
+        setError("Hubo un problema al registrarse. Inténtalo de nuevo más tarde.");
+        console.log(error);
       }
-    } catch (error) {
-      setError("Hubo un problema al iniciar sesión. Inténtalo de nuevo más tarde.");
-      console.log(error);
+    } else {
+      setError("Las contraseñas no coinciden prro :v");
     }
   };
 
   return (
     <Navbar>
-      <div className={styles.loginContainer}>
+      <div className={styles.signupContainer}>
         <Form
-          title="¡Hola de nuevo!"
-          buttonText="Iniciar sesión"
+          title="¡Hola!"
+          buttonText="Registrarse"
           fields={[
+            { 
+              label: 'Nombre', 
+              type: 'default', 
+              placeholder: 'Name', 
+              value: nombre, 
+              onChange: (e) => setNombre(e.target.value)
+            },
+            { 
+              label: 'Apellido', 
+              type: 'default', 
+              placeholder: 'Last name', 
+              value: apellido, 
+              onChange: (e) => setApellido(e.target.value)
+            },
             { 
               label: 'Email', 
               type: 'email', 
@@ -55,8 +75,8 @@ const Signup = () => {
               label: 'Repite la Contraseña', 
               type: 'password', 
               placeholder: 'Password', 
-              value: password, 
-              onChange: (e) => setPassword(e.target.value) 
+              value: secondPassword, 
+              onChange: (e) => setSecondPassword(e.target.value) 
             },
           ]}
           onSubmit={handleSubmit}
@@ -67,4 +87,4 @@ const Signup = () => {
   );
 }
 
-export default Login;
+export default Signup;
