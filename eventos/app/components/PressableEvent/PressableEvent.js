@@ -1,22 +1,24 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import styles from '../PressableEvent.module.css'
+import { useState } from 'react';
+import styles from '../PressableEvent.module.css';
+import { useRouter } from 'next/navigation'; 
 
-export default function PressableEvent({ event, onPress }) {
-  const [isPressed, setIsPressed] = useState(false)
+export default function PressableEvent({ event }) {
+  const [isPressed, setIsPressed] = useState(false);
+  const router = useRouter(); 
 
   const handlePressIn = () => {
-    setIsPressed(true)
-  }
+    setIsPressed(true);
+  };
 
   const handlePressOut = () => {
-    setIsPressed(false)
-  }
+    setIsPressed(false);
+  };
 
   const handleClick = () => {
-    onPress(router.push('/detail/'event.id);)//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  }  
+    router.push(`/detail/${event.id}`);  
+  };
 
   return (
     <div
@@ -26,11 +28,11 @@ export default function PressableEvent({ event, onPress }) {
       onMouseLeave={handlePressOut}
       onTouchStart={handlePressIn}
       onTouchEnd={handlePressOut}
-      onClick={handleClick}
+      onClick={handleClick} 
     >
       <h2>{event.name}</h2>
       <p>{event.description}</p>
       <p>{event.start_date}</p>
     </div>
-  )
+  );
 }
