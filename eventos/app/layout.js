@@ -1,4 +1,5 @@
 // app/layout.js
+import EventProvider from "./context/EventContext";
 import "./globals.css";
 
 export const metadata = {
@@ -11,9 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       
       <body>
-        
+      <EventProvider>
         {children} 
-        
+      </EventProvider>
       </body>
     </html>
   );

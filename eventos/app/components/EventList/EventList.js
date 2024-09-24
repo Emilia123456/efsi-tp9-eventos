@@ -1,17 +1,16 @@
+import PressableEvent from '../PressableEvent/PressableEvent';
 import styles from '../EventList.module.css';
 
-
-const EventList = ({ events, onEventClick }) => (
-    <ul className={styles.eventsList}>
-      {events.map(event => (
-        <li key={event.id} className={styles.eventItem} onClick={() => onEventClick(event.id)}>
-          <h3 className={styles.eventTitle}>{event.title}</h3>
-          <p className={styles.eventDate}>Fecha: {event.date}</p>
-          <p className={styles.eventLocation}>Ubicación: {event.location}</p>
-        </li>
+export default function EventList({ events, onEventClick }) {
+  return (
+    <div className={styles.eventList}>
+      {events.map((event) => (
+        <PressableEvent
+          key={event.id}
+          event={event}
+          onPress={() => onEventClick(event.id)} 
+        />
       ))}
-    </ul>
+    </div>
   );
-  
-  export default EventList;
-  
+}
