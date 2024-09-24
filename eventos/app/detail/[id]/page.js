@@ -32,8 +32,9 @@ export default function EventDetails() {
       <main className={styles.detailsContainer}>
         <h1 className={styles.eventTitle}>{event.name}</h1>
         <p className={styles.eventDescription}>{event.description}</p>
-        <p className={styles.eventDate}><strong>Fecha:</strong> {event.start_date}</p>
-        
+        <p className={styles.eventDate}>
+          <strong>Fecha:</strong> {new Date(event.start_date).toLocaleDateString('es-ES')}
+        </p>
       </main>
     </Navbar>
   );

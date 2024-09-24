@@ -11,12 +11,12 @@ const Navbar = ({ children }) => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-        <img src="/assets/logo.png" alt="Logo2" className={styles.logo} />  {/* NO SE VE EL LOGO */}
+        <img src="/assets/logo.png" alt="Logo2" className={styles.logo} /> 
           <h1 className={styles.title}>Eventos</h1>
         </div>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-             <li className={styles.navItem}><Link href="/">Home</Link></li>
+             <li className={styles.navItem}><Link href="/events">Home</Link></li>
             <li className={styles.navItem}><Link href="/contacto">Contacto</Link></li>
 
           </ul>

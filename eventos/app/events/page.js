@@ -6,6 +6,7 @@ import styles from './Events.module.css';
 import EventList from '../components/EventList/EventList';
 import Navbar from '../components/Navbar/Navbar';
 import { EventContext } from '../context/EventContext';
+import authMiddleware from '../middleware/authmiddleware';
 
 export default function Events() {
   const { eventos } = useContext(EventContext);
@@ -14,6 +15,11 @@ export default function Events() {
   const handleEventClick = (id) => {
     router.push(`/detail/${id}`);
   };
+
+
+  useEffect(() => {
+    authMiddleware(router);
+  }, [router]);
 
   useEffect(() => {
     console.log("Eventos en Events.js:", eventos);
