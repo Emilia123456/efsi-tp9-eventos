@@ -1,5 +1,6 @@
 // app/layout.js
 import EventProvider from "./context/EventContext";
+import { LoginProvider } from "./context/LoginContext";
 import "./globals.css";
 
 export const metadata = {
@@ -10,11 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
       <body>
-      <EventProvider>
-        {children} 
-      </EventProvider>
+      <LoginProvider>
+        <EventProvider>
+          {children} 
+        </EventProvider>
+      </LoginProvider>
       </body>
     </html>
   );

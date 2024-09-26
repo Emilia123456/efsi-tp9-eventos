@@ -32,7 +32,7 @@ export default function PressableEvent({ event }) {
     >
       <h2>{event.name}</h2>
       <p>{event.description}</p>
-      <p>{event.start_date}</p>
+      <p>{new Date(event.start_date).toLocaleDateString('es-ES')}</p>
     </div>
   );
 }

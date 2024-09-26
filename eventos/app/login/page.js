@@ -1,9 +1,10 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './Login.module.css';
 import Navbar from '../components/Navbar/Navbar';
-import login from '../services/login-service';
+import loginService from '../services/login-service';
+import { useAuth } from '../context/LoginContext'; // Contexto de autenticación
 import Form from '../components/Form/Form';
 
 const Login = () => {
@@ -11,14 +12,23 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const router = useRouter();
+  const { user, login } = useAuth(); // Usar el contexto para gestionar el login
+
+  // Redirigir si ya está autenticado
+  useEffect(() => {
+    if (user) {
+      router.push('/events'); // Redirigir si está logueado
+    }
+  }, [user, router]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const result = await login(email, password);
+      const result = await loginService(email, password);
       if (result.success) {
         const token = result.token;
         localStorage.setItem('token', token);
+        login({ email }, token); // Guardar el usuario en el contexto
         router.push('/events');
       } else {
         setError("Usuario o contraseña incorrecta, vuelve a ingresar los datos.");
