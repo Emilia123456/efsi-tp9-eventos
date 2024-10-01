@@ -14,7 +14,7 @@ const EventProvider = (props) => {
       const url = `http://localhost:3001/api/event`;
       try {
         const respuesta = await axios.get(url);
-        console.log('Eventos desde API:', respuesta.data); // Añadir esto para depurar
+        console.log('Eventos desde API:', respuesta.data);
         setEventos(respuesta.data);
       } catch (error) {
         console.error('Error al traer los eventos', error);

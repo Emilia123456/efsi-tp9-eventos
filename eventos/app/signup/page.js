@@ -23,7 +23,7 @@ const Signup = () => {
         if (result>0) {
           const token = result.token;
           localStorage.setItem('token', token);
-          router.push('/events');
+          router.push('/login');
         } else {
           setError("Usuario o contraseña incorrecta, vuelve a ingresar los datos.");
         }

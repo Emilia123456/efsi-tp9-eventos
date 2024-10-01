@@ -27,6 +27,11 @@
   margin-right: 10px;
 }
 
+.icono {
+  height: 30px;
+  margin-right: 15px;
+}
+
 .title {
   font-size: 1.5rem;
   font-weight: normal;

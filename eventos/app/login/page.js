@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import styles from './Login.module.css';
 import Navbar from '../components/Navbar/Navbar';
 import loginService from '../services/login-service';
-import { useAuth } from '../context/LoginContext'; // Contexto de autenticación
+import { useAuth } from '../context/LoginContext'; 
 import Form from '../components/Form/Form';
 
 const Login = () => {
@@ -12,12 +12,11 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const router = useRouter();
-  const { user, login } = useAuth(); // Usar el contexto para gestionar el login
+  const { user, login } = useAuth(); 
 
-  // Redirigir si ya está autenticado
   useEffect(() => {
     if (user) {
-      router.push('/events'); // Redirigir si está logueado
+      router.push('/events');
     }
   }, [user, router]);
 
@@ -28,7 +27,7 @@ const Login = () => {
       if (result.success) {
         const token = result.token;
         localStorage.setItem('token', token);
-        login({ email }, token); // Guardar el usuario en el contexto
+        login({ email }, token); 
         router.push('/events');
       } else {
         setError("Usuario o contraseña incorrecta, vuelve a ingresar los datos.");

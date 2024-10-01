@@ -9,8 +9,8 @@ const Form = ({ fields, title, buttonText, onSubmit }) => (
         <input 
           type={type} 
           placeholder={placeholder} 
-          value={value} // Asignamos el valor del campo
-          onChange={onChange} // Agregamos el manejador de cambios
+          value={value} 
+          onChange={onChange} 
         />
       </div>
     ))}

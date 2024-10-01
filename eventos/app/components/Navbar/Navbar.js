@@ -15,9 +15,8 @@ const Navbar = ({ children }) => {
     router.push('/login');
   };
 
-  // Lógica para detectar si estamos en login, signup, la página inicial, o si el usuario no está logueado
   const isAuthPage = pathname === '/login' || pathname === '/signup' || pathname === '/';
-  const isContactPage = pathname === '/contacto'; // Detectar si estamos en la página de contacto
+  const isContactPage = pathname === '/contacto'; 
 
   return (
     <div className={styles.container}>
@@ -30,13 +29,11 @@ const Navbar = ({ children }) => {
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             {isAuthPage || (!user && isContactPage) ? (
-              // Si estamos en login, signup, la página inicial o en contacto sin estar logueado
               <>
                 <li className={styles.navItem}><Link href="/">Inicio</Link></li>
                 <li className={styles.navItem}><Link href="/contacto">Contacto</Link></li>
               </>
             ) : (
-              // Si estamos en cualquier otra página o logueado
               <>
                 <li className={styles.navItem}><Link href="/events">Home</Link></li>
                 <li className={styles.navItem}><Link href="/contacto">Contacto</Link></li>
@@ -48,11 +45,11 @@ const Navbar = ({ children }) => {
         <div className={styles.userInfo}>
           {user ? (
             <>
+            <img src="/assets/icono.png" alt="Foto de perfil" className={styles.icono} />
               <span>{user.email}</span>
               <button onClick={handleLogout} className={styles.logoutButton}>Cerrar Sesión</button>
             </>
           ) : (
-            // Si no está logueado, mostrar botones de "Iniciar sesión" y "Registrarse"
             <>
               <button onClick={() => router.push('/login')} className={styles.logoutButton}>Iniciar sesión</button>
               <button onClick={() => router.push('/signup')} className={styles.logoutButton}>Registrarse</button>
