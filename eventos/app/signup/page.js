@@ -5,6 +5,7 @@ import styles from './Signup.module.css';
 import Navbar from '../components/Navbar/Navbar';
 import signup from '../services/signup-service';
 import Form from '../components/Form/Form';
+import Link from 'next/link';
 
 const Signup = () => {
   const [nombre, setNombre] = useState('');
@@ -82,6 +83,11 @@ const Signup = () => {
           onSubmit={handleSubmit}
         />
         {error && <div style={{ color: 'red' }}>{error}</div>}
+        <div className={styles.signupPrompt}>
+          ¿Ya tienes una cuenta?{' '}
+          <div className={styles.link}><Link href="/login">Iniciar sesión</Link></div>
+          
+        </div>
       </div>
     </Navbar>
   );

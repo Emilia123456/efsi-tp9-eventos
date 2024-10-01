@@ -9,3 +9,13 @@
     background-color: #f8f8f8;
   }
   
+  .signupPrompt{
+    margin-top: 20px;
+    display: flex;
+  }
+  
+  .link{
+    color: rgb(47, 118, 250);
+    margin-left: 10px;
+  
+  }

@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar/Navbar';
 import loginService from '../services/login-service';
 import { useAuth } from '../context/LoginContext'; 
 import Form from '../components/Form/Form';
+import Link from 'next/link';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -61,8 +62,15 @@ const Login = () => {
             },
           ]}
           onSubmit={handleSubmit}
+          
         />
+
         {error && <div style={{ color: 'red' }}>{error}</div>}
+        <div className={styles.signupPrompt}>
+          ¿Aún no tienes una cuenta?{' '}
+          <div className={styles.link}><Link href="/signup">Regístrate</Link></div>
+          
+        </div>
       </div>
     </Navbar>
   );
