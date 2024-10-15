@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './Signup.module.css';
 import Navbar from '../components/Navbar/Navbar';
@@ -15,6 +15,8 @@ const Signup = () => {
   const [secondPassword, setSecondPassword] = useState('');
   const [error, setError] = useState(null);
   const router = useRouter();
+  const user = localStorage.getItem('token');
+    
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,6 +38,12 @@ const Signup = () => {
       setError("Las contraseñas no coinciden prro :v");
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      router.push('/events');
+    }
+  }, [user, router]);
 
   return (
     <Navbar>
