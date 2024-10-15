@@ -36,6 +36,6 @@ export default function EventDetails() {
           <strong>Fecha:</strong> {new Date(event.start_date).toLocaleDateString('es-ES')}
         </p>
       </main>
-    </Navbar>
+    </Navbar> 
   );
 }

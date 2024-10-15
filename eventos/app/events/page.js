@@ -25,7 +25,7 @@ export default function Events() {
     console.log("Eventos en Events.js:", eventos);
   }, [eventos]);
 
-  return (
+  return ( 
     <Navbar>
       <main className={styles.eventsContainer}>
         <h1 className={styles.eventsTitle}>Eventos</h1>

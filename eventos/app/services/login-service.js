@@ -19,5 +19,5 @@ export default async function login(email, password) {
       console.error('Error fetching data:', error);
       throw error; 
     }
-  };
+  }; 
   

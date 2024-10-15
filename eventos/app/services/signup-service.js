@@ -22,6 +22,6 @@ export default async function signup (nombre, apellido, email, password) {
       console.error('Error fetching data:', error);
       throw error; 
     }
-  };
+  }; 
   
   

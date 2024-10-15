@@ -1,13 +1,10 @@
 "use client";
 import { createContext, useContext, useState, useEffect } from 'react';
 
-// Crear el contexto
 const LoginContext = createContext();
-
-// Custom hook para acceder al contexto
+ 
 export const useAuth = () => useContext(LoginContext);
 
-// Proveedor del contexto
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 

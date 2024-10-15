@@ -98,7 +98,7 @@ const Signup = () => {
         </div>
       </div>
     </Navbar>
-  );
+  ); 
 }
 
 export default Signup;

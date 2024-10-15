@@ -19,4 +19,4 @@ export default function Contacto() {
     </div>
     </Navbar>
   );
-}
+} 
