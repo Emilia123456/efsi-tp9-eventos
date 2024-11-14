@@ -6,7 +6,7 @@ export default function authMiddleware(router) {
       if (!token) {
           router.push('/login'); //si no hay token, redirige al login
       } 
-      else if (router.pathname === '/signup') {
+      else if (router.pathname === '/signup' ) {
           router.push('/events');
       }
   }

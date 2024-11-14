@@ -3,6 +3,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'next/navigation'; 
 import { EventContext } from '@/app/context/EventContext'; 
+import { useRouter } from 'next/navigation';
 import styles from '../Details.module.css';
 import Navbar from '@/app/components/Navbar/Navbar';
 
@@ -10,6 +11,14 @@ export default function EventDetails() {
   const { id } = useParams();  
   const { eventos } = useContext(EventContext);
   const [event, setEvent] = useState(null); 
+  const router = useRouter();
+
+  useEffect(()=>{
+    let tieneTok = localStorage.getItem('token')
+    if(!tieneTok){
+      router.push('/login');
+    }
+  },[])
 
   useEffect(() => {
     console.log("ID desde la URL:", id);

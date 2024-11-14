@@ -12,8 +12,9 @@ export default function Events() {
   const { eventos } = useContext(EventContext);
   const router = useRouter();
 
-  const handleEventClick = (id) => {
+  const handleEventClick = (id) => { 
     router.push(`/detail/${id}`);
+  
   };
 
 
